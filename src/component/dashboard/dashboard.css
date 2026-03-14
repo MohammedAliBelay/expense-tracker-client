@@ -1,0 +1,110 @@
+.dashboard {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.dashboard-content {
+  padding: 30px;
+}
+
+/* header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #4b6cb7;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+}
+
+/* toolbar (export buttons) */
+.dashboard-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* generic export button */
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  transition:
+    transform 0.08s ease,
+    opacity 0.08s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* specific colors */
+.export-pdf {
+  background: linear-gradient(180deg, #d9534f, #c9302c);
+}
+
+.export-excel {
+  background: linear-gradient(180deg, #2e8b57, #206040);
+}
+
+/* disabled state */
+.export-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* small hover effect */
+.export-btn:not([disabled]):hover {
+  transform: translateY(-1px);
+}
+
+/* responsive adjustments */
+@media (max-width: 720px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dashboard-toolbar {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .export-btn {
+    width: auto;
+  }
+}
+
+/* optional: small spacing adjustments when using ExpenseTable */
+.table-section {
+  margin-top: 10px;
+}
+
+.toggle-export-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.toggle-export-btn:hover {
+  background: #1d4ed8;
+}

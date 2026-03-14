@@ -1,0 +1,273 @@
+:root {
+  /* Modern Professional Palette */
+  --primary: #50b9b9;
+  --primary-hover: #42a3a3;
+  --secondary: #64748b;
+  --bg-app: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+
+  /* Status Colors */
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* Utilities */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.table-section {
+  padding: 2.5rem;
+  background-color: var(--bg-app);
+  min-height: 100vh;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--text-main);
+}
+
+/* --- Toggle Button Area --- */
+.action-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.toggle-add-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Animated Form --- */
+.add-expense-section {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.add-expense-form {
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.add-expense-form.expanded {
+  padding: 1.5rem;
+  max-height: 800px;
+  opacity: 1;
+}
+
+.add-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-form-row input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  transition: var(--transition);
+}
+
+.add-form-row input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(80, 185, 185, 0.15);
+}
+
+/* --- Table Styles --- */
+.table-container {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.table-controls {
+  padding: 1.25rem;
+  background: #fafafa;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expense-table th {
+  background: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.expense-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.expense-table tr:last-child td {
+  border-bottom: none;
+}
+
+.expense-table tr:hover {
+  background-color: #f1f5f966;
+}
+
+/* --- Badges --- */
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.Approved {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge.Pending {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.badge.Rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* --- Action Buttons --- */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-approve {
+  background: var(--success);
+  color: white;
+}
+.btn-reject {
+  background: #fff;
+  border-color: var(--danger) !important;
+  color: var(--danger);
+}
+.btn-edit {
+  background: #fff;
+  border-color: var(--border) !important;
+  color: var(--secondary);
+}
+.btn-delete {
+  background: #fff;
+  border-color: #cbd5e1 !important;
+  color: var(--text-muted);
+}
+
+.action-buttons button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+/* --- Footer Summary --- */
+.total-expense {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  text-align: right;
+  font-size: 1.1rem;
+  border: 1px solid var(--border);
+}
+
+.total-expense strong {
+  color: var(--primary-hover);
+  font-size: 1.3rem;
+}
+
+/* --- Mobile Optimization (Cards) --- */
+@media (max-width: 1024px) {
+  .expense-table thead {
+    display: none;
+  }
+
+  .expense-table tr {
+    display: block;
+    border: 1px solid var(--border);
+    margin: 1rem;
+    border-radius: var(--radius);
+    padding: 0.5rem;
+  }
+
+  .expense-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 0.75rem 1rem;
+  }
+
+  .expense-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+}

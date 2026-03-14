@@ -1,0 +1,94 @@
+/* NAVBAR CONTAINER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  padding: 16px 40px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+/* LOGO / TITLE */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* USER SECTION */
+.navbar-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* GREETING TEXT */
+.span {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* LOGOUT BUTTON */
+.btn-logout {
+  margin-top: 6px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #0f766e;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* BUTTON HOVER */
+.btn-logout:hover {
+  background-color: #0f172a;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* BUTTON ACTIVE */
+.btn-logout:active {
+  transform: scale(0.96);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 20px;
+    gap: 10px;
+  }
+
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  .navbar-user {
+    align-items: flex-start;
+  }
+
+  .btn-logout {
+    align-self: flex-start;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+
+  .span {
+    font-size: 0.8rem;
+  }
+  .btn-logout {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
