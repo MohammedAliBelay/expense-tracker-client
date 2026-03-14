@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ExpenseTable from "../expensetable/ExpenseTable";
 import api from "../../Api/axious";
-import "./Dashboard.css";
+import "./dashboard.css";
 
 export default function Dashboard({
   expenses,
