@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "../../Api/axious";
-import "./EditModal.css";
+import "./editmodal.css";
 import { toast } from "react-toastify";
 
 export default function EditModal({ expense, onClose, onUpdate }) {
