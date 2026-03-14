@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/", // Your backend port
-  // baseURL: "https://expense-tracker-server-2956.onrender.com",
+  // baseURL: "http://localhost:5000/", // Your backend port
+  baseURL: "https://expense-tracker-server-2956.onrender.com",
 });
 
 // Automatically add the token to every request
