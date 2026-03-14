@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditModal from "../editmodal/EditModal";
 
-import "./ExpenseTable.css";
+import "./expensetable.css";
 import api from "../../Api/axious";
 
 export default function ExpenseTable({
