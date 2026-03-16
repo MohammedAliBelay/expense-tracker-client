@@ -24,25 +24,17 @@ export default function ExpenseTable({
     remark: "",
   });
 
-  const handleStatusChange = async (id, newStatus) => {
+  const handleStatusChange = async (id, status) => {
     try {
-      await api.put(`/expenses/approve/${id}`, { status: newStatus });
-      showToast(`Expense ${newStatus}`);
+      const endpoint = status === "Approved" ? "approve" : "reject";
+
+      await api.put(`/expenses/${endpoint}/${id}`);
+      showToast(`Expense ${status}`);
       fetchExpenses();
     } catch {
       showToast("Update failed", "error");
     }
   };
-const handleStatusChange1 = async (id, newStatus) => {
-  try {
-    await api.put(`/expenses/reject/${id}`, { status: newStatus });
-    showToast(`Expense ${newStatus}`);
-    fetchExpenses();
-  } catch {
-    showToast("Update failed", "error");
-  }
-};
-
   const addExpense = async () => {
     if (!newExpense.date || !newExpense.amount || !newExpense.reason) {
       return showToast("Date, Amount, and Reason are required", "error");
@@ -279,7 +271,7 @@ const handleStatusChange1 = async (id, newStatus) => {
 
                           <button
                             className="btn-reject"
-                            onClick={() => handleStatusChange1(e.id, "Rejected")}
+                            onClick={() => handleStatusChange(e.id, "Rejected")}
                           >
                             Reject
                           </button>
