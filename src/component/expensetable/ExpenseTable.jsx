@@ -33,6 +33,15 @@ export default function ExpenseTable({
       showToast("Update failed", "error");
     }
   };
+const handleStatusChange1 = async (id, newStatus) => {
+  try {
+    await api.put(`/expenses/reject/${id}`, { status: newStatus });
+    showToast(`Expense ${newStatus}`);
+    fetchExpenses();
+  } catch {
+    showToast("Update failed", "error");
+  }
+};
 
   const addExpense = async () => {
     if (!newExpense.date || !newExpense.amount || !newExpense.reason) {
@@ -270,7 +279,7 @@ export default function ExpenseTable({
 
                           <button
                             className="btn-reject"
-                            onClick={() => handleStatusChange(e.id, "Rejected")}
+                            onClick={() => handleStatusChange1(e.id, "Rejected")}
                           >
                             Reject
                           </button>
