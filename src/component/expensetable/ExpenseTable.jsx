@@ -239,7 +239,7 @@ export default function ExpenseTable({
                       className="btn-view"
                       onClick={() =>
                         window.open(
-                          `http://localhost:5000/uploads/${e.receipt}`,
+                          `https://fets1.onrender.com/${e.receipt}`,
                           "_blank",
                         )
                       }
