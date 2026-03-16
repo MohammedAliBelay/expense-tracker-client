@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../Api/axious";
 import { toast } from "react-toastify";
+import "../login/login.css";
 
 export default function Register() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -46,14 +48,23 @@ export default function Register() {
           onChange={handleChange}
           required
         />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+        <div className="password-wrapper">
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            placeholder="Enter password"
+            className="password-input"
+            required
+          />
+          <span
+            className="toggle-icon"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? "🙈" : "👁️"}
+          </span>
+        </div>
         <button type="submit">Register</button>
       </form>
       <p>

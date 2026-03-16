@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./login.css";
 import API from "../../Api/axious";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -61,6 +62,7 @@ export default function Login() {
           >
             {showPassword ? "🙈" : "👁️"}
           </span>
+          <Link to="/forgot-password">Forgot Password?</Link>
         </div>
 
         <button type="submit">Login</button>
